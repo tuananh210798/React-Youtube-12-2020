@@ -1,6 +1,14 @@
 import React from 'react';
 
 const Product = (props) => {
+
+    function onAddToCart(text) {
+        alert(text);
+        console.log(text);
+    }
+
+
+
     return (
 
         <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
@@ -13,9 +21,10 @@ const Product = (props) => {
                   </p>
 
                 </div>
+                <button type="button" class="btn btn-success" onClick={() => onAddToCart(props.children)}>Mua hang</button>
             </div>
 
-            <button type="button" class="btn btn-success">Mua hang</button>
+
 
         </div>
 

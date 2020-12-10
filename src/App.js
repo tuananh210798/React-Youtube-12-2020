@@ -6,28 +6,13 @@ import Product from './components/Product';
 
 function App() {
 
-  function showInfoProduct(product) {
-    if (product.status) {
-      return (
-        <h3>
-          ID:{product.id}<br />
-        Name:{product.name}<br />
-        Bien:{product.bien}<br />
-        Status: {product.status ? 'Active' : 'Pending'}
-        </h3>
-      )
-    }
+
+
+  function onClick() {
+    alert("Nguyen Tuan Anh");
   }
 
 
-
-
-  var product = {
-    id: 7,
-    name: 'nam dinh',
-    bien: 18,
-    status: true
-  }
 
 
   var products = [
@@ -43,13 +28,13 @@ function App() {
       name: 'Sam sung',
       price: 200000000,
       image: 'https://cdn.tgdd.vn/Files/2018/05/10/1087515/ro-ri-hinh-anh-chiec-dien-thoai-gap-man-hinh-doc-dao-cua-samsung-3.jpg',
-      status: false
+      status: true
     },
     {
       id: 3,
       name: 'Nokia',
       price: 300000000,
-      image: 'https://vnn-imgs-a1.vgcloud.vn/image1.ictnews.vn/_Files/2020/05/13/b16-hinh-nen-nokia-1280-cho-samsung-oppo-tren-iphone-anh-nen-nokia-1280-danh-cho-smartphone-dien-thoai-cam-ung.jpg',
+      image: 'https://imgt.taimienphi.vn/cf/Images/2017/1/ddt/1/7-mau-dien-thoai-chup-anh-dep-ngay-tet.jpg',
       status: true
     }
   ];
@@ -61,9 +46,9 @@ function App() {
     let result = '';
 
     if (pt.status) {
-      result = <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6" key={index}>
-        < Product price={pt.price} image={pt.image} > {pt.name}</Product >
-      </div >
+      result =
+        < Product price={pt.price} image={pt.image} key={index}> {pt.name}</Product >
+
     }
     return result;
   });
@@ -73,15 +58,19 @@ function App() {
   return (
     <div>
       <Header />
+      <div className="container">
+        <div className="row">
+          <div className="row">
+            <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4" >
+              {sp}
+            </div>
+            <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4" >
 
+              <button type="button" class="btn btn-warning" onClick={onClick}>Click me!</button>
 
-      <div className="row">
-        {sp}
-
-      </div>
-
-      <div className="ml-30">
-        {showInfoProduct(product)}
+            </div>
+          </div>
+        </div>
       </div>
 
 
